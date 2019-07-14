@@ -8,7 +8,9 @@ package loadavg
 import "C"
 import "unsafe"
 
-// Get system load averages
+// Get the number of processes in the system run queue averaged over various
+// periods of time.  The system imposes a maximum of 3 samples, representing
+// averages over the last 1, 5, and 15 minutes, respectively.
 func Get() [3]float64 {
 	var avg [3]C.double
 	C.getloadavg(&avg[0], 3)
