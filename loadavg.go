@@ -1,5 +1,4 @@
-// +build darwin dragonfly freebsd linux netbsd openbsd solaris
-// +build cgo
+//go:build (darwin || dragonfly || freebsd || linux || netbsd || openbsd || solaris) && cgo
 
 // Package loadavg implements get system load averages on POSIX compatible platforms
 package loadavg
